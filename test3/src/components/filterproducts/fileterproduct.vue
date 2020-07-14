@@ -10,18 +10,5 @@
     </div>
 </template>
 
-<script>
-import {mapActions} from 'vuex';
-export default {
-    name: 'FilterTodo',
-    methods:mapActions(['filterTodo'])
-}
-</script>
-<style scoped>
-select{
-    margin-top: 20px;
-    padding: 6px;
-    border: 1px solid #41b833;
-}
-
-</style>
+<script src="./public/js/filter.js"></script>
+<style src="./public/sass/style.scss" lang="scss" scoped></style>
