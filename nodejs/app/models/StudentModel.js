@@ -11,18 +11,18 @@ const Student = function(student){
     this.score = student.score;
 }
 
-// tạo sinh viên mới
-// Student.create = (newStudent, result) =>{
-//     sql.query("INSERT INTO students SET ?", newStudent,(err,res) => {
-//         if(err) {
-//             console.log("error: ", err);
-//             result(err,null);
-//             return;
-//         }
-//         console.log("Creat student: ", {id:res.insertId,...newStudent});
-//         result(null,{id:res.insertId,...newStudent});
-//     });
-// };
+//tạo sinh viên mới
+Student.create = (newStudent, result) =>{
+    sql.query("INSERT INTO students SET ?", newStudent,(err,res) => {
+        if(err) {
+            console.log("error: ", err);
+            result(err,null);
+            return;
+        }
+        console.log("Creat student: ", {id:res.insertId,...newStudent});
+        result(null,{id:res.insertId,...newStudent});
+    });
+};
 
 // tìm sinh viên theo id
 Student.findById = (studentId, result) => {
@@ -53,17 +53,16 @@ Student.remove = (id, result) => {
         result(null, err);
         return;
       }
+      if (res.affectedRows == 0) {
+        // not found Customer with the id
+        result({ kind: "not_found" }, null);
+        return;
+      }
   
-//       if (res.affectedRows == 0) {
-//         // not found Customer with the id
-//         result({ kind: "not_found" }, null);
-//         return;
-//       }
-  
-//       console.log("deleted customer with id: ", id);
-//       result(null, res);
-//     });
-//   };
+      console.log("deleted customer with id: ", id);
+      result(null, res);
+    });
+  };
 
 // lấy tất cả các sinh viên
 Student.getAll = result => {
@@ -73,7 +72,7 @@ Student.getAll = result => {
             result(null,err);
             return;
         }
-
+        
         console.log("students: ", res);
         result(null,res);
     });

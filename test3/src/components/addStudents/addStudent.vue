@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script src="./public/js/addproduct.js">
+<script src="./public/js/addStudent.js">
 
 </script>
 

@@ -3,5 +3,7 @@ module.exports = app => {
 
     app.get("/students",students.findAll);
     app.get("/students/:studentId",students.findById);
+    app.delete("/students/:studentId",students.deleteById);
+    app.post("/students",students.create);
 }
 
