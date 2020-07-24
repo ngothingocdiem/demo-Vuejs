@@ -13,7 +13,7 @@ const getters ={
 
 const actions = {
     async fetchTodos({ commit }){
-        const response = await Axios.get('https://jsonplaceholder.typicode.com/todos');
+        const response = await Axios.get('http://localhost:3000/students');
         commit('setTodos',response.data);
     },
     async addTodo({commit},title){

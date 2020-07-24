@@ -13,9 +13,11 @@
             :key="todo.id" class="todo"
             :class="{unCompleted:(todo.completed == false)}"
             @click="changeCompletedTodo(todo.id)">
-              {{todo.title}}
+              {{todo.name}}
               <br/>
-              {{todo.completed}}
+              {{todo.age}}
+              <br/>
+              {{todo.score}}
 
               <i @click = "deleteTodo(todo.id)" class="fas fa-trash-alt"></i>
           </div>
