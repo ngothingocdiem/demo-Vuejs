@@ -16,7 +16,7 @@ const actions = {
         commit('setStudents', response.data);
     },
     async addStudent({ commit }, title) {
-        const response = await Axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false });
+        const response = await Axios.post('http://localhost:3000/students', { title, completed: false });
         commit('newStudent', response.data);
         console.log(response.data);
     },
@@ -27,13 +27,13 @@ const actions = {
 
     async filterStudent({ commit }, e) {
         const limit = parseInt(e.target.options[e.target.options.selectedIndex].innerText);
-        const reponse = await Axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`);
+        const reponse = await Axios.get(`http://localhost:3000/students?_limit=${limit}`);
         commit('filterStudent', reponse.data);
     },
 
     async changeCompletedStudent(xxx, id) {
         //console.log(id);
-        const response = await Axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        const response = await Axios.put(`http://localhost:3000/students/${id}`);
         console.log(response);
         //conmit('changeCompleted',response.data);
     }
