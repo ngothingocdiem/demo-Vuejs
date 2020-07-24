@@ -15,13 +15,13 @@ const actions = {
         const response = await Axios.get('http://localhost:3000/students');
         commit('setStudents', response.data);
     },
-    async addStudent({ commit }, title) {
-        const response = await Axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false });
+    async addStudent({ commit }, {name,age,sex,address,classs,score}) {
+        const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
         commit('newStudent', response.data);
         console.log(response.data);
     },
     async deleteStudent({ commit }, id) {
-        await Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        await Axios.delete(`http://localhost:3000/students/${id}`);
         commit('remoStudent', id);
     },
 
@@ -41,7 +41,7 @@ const actions = {
 };
 
 const mutations = {
-    setStudents: (state, lala) => (state.students = lala),
+    setStudents: (state, data) => (state.students = data),
     newStudent: (state, student) => (state.students.unshift(student)),
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
     filterStudent: (state, data) => (state.students = data),
