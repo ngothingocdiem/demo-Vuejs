@@ -6,6 +6,6 @@ export default {
     },
     computed: mapGetters(['allStudents']),
     created() {
-        this.fetchStudents()
+        this.fetchStudents();
     }
 }

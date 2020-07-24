@@ -1,27 +1,41 @@
 <template>
-  <div class="students">
-      <div class="completed">
-          <p>COMPLETED</p>
-          <div class="box-completed"></div>
-      </div>
-       <div class="uncompleted">
-          <p>UNCOMPLETED</p>
-          <div class="box-uncompleted"></div>
-      </div>
-      <div class="Students">
-            <div v-for="student in allStudents" 
-            :key="student.id" class="Student"
-            :class="{unCompleted:(student.completed == false)}"
-            @click="changeCompletedStudent(student.id)">
-              {{student.name}}
-              <br/>
-              {{student.age}}
-              <br/>
-              {{student.score}}
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Danh sách sinh viên</div>
+      <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Họ và Tên</th>
+              <th scope="col">Tuổi</th>
+              <th scope="col">Điểm</th>
+              <th scope="col">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="student in allStudents"
+              :key="student.id"
+              class="p-2"
+              :class="{ unCompleted: student.completed == false }"
+              @click="changeCompletedStudent(student.id)"
+            >
+              <th scope="row">{{ student.id }}</th>
+              <td>{{ student.name }}</td>
+              <td>{{ student.age }}</td>
+              <td>{{ student.score }}</td>
+              <td>
+                  <i class="fa fa-pencil-square-o text-primary mr-3" aria-hidden="true"></i>
+                <i @click="deleteStudent(student.id)" class="fas fa-trash-alt text-danger"></i>
 
-              <i @click = "deleteStudent(student.id)" class="fas fa-trash-alt"></i>
-          </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <div class="card-footer"></div>
+    </div>
   </div>
 </template>
 
