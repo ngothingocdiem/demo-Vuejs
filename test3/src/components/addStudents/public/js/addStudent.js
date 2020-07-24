@@ -16,7 +16,7 @@ export default {
         ...mapActions(['addStudent']),
         submit(e) {
             e.preventDefault();
-            this.addStudent(this.name,this.age,this.sex,this.address,this.classs,this.score);
+            this.addStudent({name:this.name,age:this.age,sex:this.sex,address:this.address,classs:this.classs,score:this.score});
         }
     },
     computed: {

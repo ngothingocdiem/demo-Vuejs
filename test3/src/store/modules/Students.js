@@ -17,25 +17,38 @@ const actions = {
             url : "http://localhost:3000/students",
             headers :{'Access-Control-Allow-Origin': 'http://localhost:3000' }
         });
-        console.log(response.data);
         commit('setStudents', response.data);
     },
-    async addStudent({ commit },[fname,fage,fsex,faddress,fclasss,fscore]) {
+    async addStudent({ commit },student) {
         //const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
         const response = await Axios({
             method: 'post',
             url: 'http://localhost:3000/students',
             data: {
-                name : fname,
-                age : fage,
-                sex : fsex,
-                address : faddress,
-                classs : fclasss,
-                score : fscore
+                name : student.name,
+                age : student.age,
+                sex : student.sex,
+                address : student.address,
+                classs : student.classs,
+                score : student.score
               }
         })
         commit('newStudent', response.data);
-        console.log(response.data);
+    },
+    async editStudent({ commit },student) {
+        const response = await Axios({
+            method: 'put',
+            url: `http://localhost:3000/students/${id}`,
+            data: {
+                name : student.name,
+                age : student.age,
+                sex : student.sex,
+                address : student.address,
+                classs : student.classs,
+                score : student.score
+              }
+        })
+        commit('editStudent', response.data, id);
     },
     async deleteStudent({ commit }, id) {
         await Axios.delete(`http://localhost:3000/students/${id}`);
@@ -60,6 +73,7 @@ const actions = {
 const mutations = {
     setStudents: (state, data) => (state.students = data),
     newStudent: (state, student) => (state.students.unshift(student)),
+    editStudent: (state, student, id) => (state.students.unshift(student).filter(student => student.id === id)),
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
     filterStudent: (state, data) => (state.students = data),
     //changCompleted: (state,data) => (state.todos = state.todos.map((todo,index) => todo.id.completed = true))
