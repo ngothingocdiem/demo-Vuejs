@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="addTodo">
+  <div class="addTodo">
         <form action="#" @submit='submit'>
             <input type="text" v-model="name" placeholder="name...">
             <input type="text" v-model="age" placeholder="age...">
@@ -8,10 +8,11 @@
             <input type="text" v-model="classs" placeholder="classs...">
             <input type="text" v-model="score" placeholder="score...">
             
-            <input type="submit" value="Submit">
+            <router-link to="/"><input type="submit" value="Submit"></router-link>
+            
         </form>
-    </div> -->
-  <div class="container">
+    </div>
+  <!-- <div class="container">
     <div class="row d-md-flex justify-content-center">
       <div class="col-md-6 col-12">
         <div class="card">
@@ -59,7 +60,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script src="./public/js/addStudent.js"></script>

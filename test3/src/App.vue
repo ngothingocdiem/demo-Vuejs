@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <div id="app">
     <div class="menu">
       <div class="dark container-fluid">
@@ -40,6 +41,8 @@
     </div>
     <router-view />
   </div>
+</div>
+  
 </template>
 
  <script>

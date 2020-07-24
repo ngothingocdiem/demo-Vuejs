@@ -1,3 +1,23 @@
 .table{
     cursor: pointer;
 }
+.container-config{
+    padding: 0 !important;
+    .search{
+        margin-bottom: 20px;
+        input{
+            border: 1px solid #20c997;
+        }
+        i{
+            color: #20c997;
+            transform: rotate(90deg);
+            margin-left: 10px;
+        }
+    }
+    .card{
+        .card-header{
+            background-color: #20c997;
+        }
+    }
+    
+}

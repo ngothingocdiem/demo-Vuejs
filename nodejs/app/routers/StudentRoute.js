@@ -6,4 +6,6 @@ module.exports = app => {
     app.delete("/students/:studentId", students.deleteById);
     app.post("/students", students.create);
     app.put("/students/:studentId", students.update);
+    app.get("/students/limit/:limit", students.limit);
+    app.post("/students/search",students.search);
 }

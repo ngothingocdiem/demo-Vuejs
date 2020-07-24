@@ -2,20 +2,22 @@ import { mapActions } from 'vuex';
 export default {
     name: 'addStudent',
     data() {
-        return {  
-            name: '123',
-            age: '123',
-            sex: 1,
-            address: '123',
-            classs:'123',
-            score:1
+        return {
+            name : "",
+            age : "",
+            sex : "",
+            address : "",
+            classs : "",
+            score: "",
         }
     },
+
     methods: {
         ...mapActions(['addStudent']),
         submit(e) {
             e.preventDefault();
-            this.addStudent(this.name,this.age,this.sex,this.address,this.classs,this.score);
+            this.addStudent({name:this.name,age:this.age,sex:this.sex,address:this.address,classs:this.classs,score:this.score});
         }
     },
+   
 }
