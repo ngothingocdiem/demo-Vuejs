@@ -22,17 +22,12 @@
             </li>
             <li class="top-level-link">
               <a href="#">
+                <router-link to="/create">CREATED</router-link>
+              </a>
+            </li>
+            <li class="top-level-link">
+              <a href="#">
                 <router-link to="/about">ABOUT</router-link>
-              </a>
-            </li>
-            <li class="top-level-link">
-              <a href="#">
-                <router-link to="/">PRODUCT</router-link>
-              </a>
-            </li>
-            <li class="top-level-link">
-              <a href="#">
-                <router-link to="/">CONTACT</router-link>
               </a>
             </li>
           </ul>

@@ -16,7 +16,6 @@ const actions = {
             url: "http://localhost:3000/students",
             headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' }
         });
-        console.log(response.data);
         commit('setStudents', response.data);
     },
     async addStudent({ commit },student) {
@@ -34,7 +33,22 @@ const actions = {
             }
         })
         commit('newStudent', response.data);
-        console.log(response.data);
+    },
+
+    async editStudent({ commit },student) {
+        const response = await Axios({
+            method: 'put',
+            url: `http://localhost:3000/students/${student.id}`,
+            data: {
+                name : student.name,
+                age : student.age,
+                sex : student.sex,
+                address : student.address,
+                classs : student.classs,
+                score : student.score
+              }
+        })
+        commit('editStudent', response.data, student.id);
     },
 
     async seachStudents({ commit }, search){
@@ -64,7 +78,8 @@ const actions = {
 
 const mutations = {
     setStudents: (state, data) => (state.students = data),
-    newStudent: (state, student) => (state.students.unshift(student)),
+    newStudent: (state, data) => (state.students.unshift(data)),
+    editStudent: (state,data) => (state.students.unshift(data)),
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
     filterStudent: (state, data) => (state.students = data),
     searchStudents: (state,data) => (state.students = data)

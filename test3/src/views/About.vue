@@ -1,16 +1,15 @@
 <template>
   <div class="about">
-    <AddStudent/>
+      <H1>ĐÂY LÀ TRANG ABOUT</H1>
   </div>
 </template>
-<script>
-// @ is an alias to /src
-import AddStudent from '@/components/addStudents/addStudent.vue'
 
+<script>
 export default {
-  name: 'About',
-  components: {
-    AddStudent
-  }
+    name:"about",
 }
 </script>
+
+<style>
+
+</style>

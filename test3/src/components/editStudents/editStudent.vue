@@ -18,7 +18,12 @@
                     <label>Họ và tên:</label>
                   </div>
                   <div class="col-md-9 col-12">
-                    <input type="text" class="form-control" id="name" placeholder="Họ và tên..." />
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      v-model.trim="name" 
+                      placeholder="Họ và tên..." 
+                    />
                   </div>
                 </div>
               </div>
@@ -33,8 +38,53 @@
                       min="0"
                       max="100"
                       class="form-control"
-                      id="age"
+                      v-model.number="age"
                       placeholder="Nhập tuổi..."
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-12">
+                    <label>Giới tính:</label>
+                  </div>
+                  <div class="col-md-9 col-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="sex"
+                      placeholder="Nhập giới tính..."
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-12">
+                    <label>Địa chỉ:</label>
+                  </div>
+                  <div class="col-md-9 col-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model.trim="address"
+                      placeholder="Nhập địa chỉ..."
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-12">
+                    <label>Lớp :</label>
+                  </div>
+                  <div class="col-md-9 col-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model.trim="classs"
+                      placeholder="Nhập tên lớp..."
                     />
                   </div>
                 </div>
@@ -50,13 +100,13 @@
                       min="0"
                       max="10"
                       class="form-control"
-                      id="score"
+                      v-model.number="score"
                       placeholder="Nhập điểm..."
                     />
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button @click="submit($event)" type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
         </div>

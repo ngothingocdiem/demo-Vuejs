@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
+import Create from '../views/Create.vue'
 import Edit from '../views/Edit.vue'
+import About from '../views/About.vue'
 
 
 Vue.use(VueRouter)
@@ -14,14 +15,19 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/create',
+    name: 'Create',
+    component: Create
   },
   {
     path: '/edit',
     name: 'Edit',
     component: Edit
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 
