@@ -1,17 +1,20 @@
 <template>
   <div class="home">
-    <Addproduct/>
+    <filterStudent/>
+    <Student/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Addproduct from '@/components/addproducts/addproduct.vue'
+import Student from '@/components/Students/Student'
+import filterStudent from '@/components/filterStudents/fileterStudent'
 
 export default {
   name: 'Home',
   components: {
-    Addproduct
+    Student,
+    filterStudent
   }
 }
 </script>
