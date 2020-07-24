@@ -20,7 +20,6 @@ const actions = {
         console.log(response.data);
         commit('setStudents', response.data);
     },
-<<<<<<< HEAD
     async addStudent({ commit },[fname,fage,fsex,faddress,fclasss,fscore]) {
         //const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
         const response = await Axios({
@@ -35,10 +34,6 @@ const actions = {
                 score : fscore
               }
         })
-=======
-    async addStudent({ commit }, title) {
-        const response = await Axios.post('http://localhost:3000/students', { title, completed: false });
->>>>>>> 8251a9c475599b64072b94c9aaa086cdc4894e9a
         commit('newStudent', response.data);
         console.log(response.data);
     },

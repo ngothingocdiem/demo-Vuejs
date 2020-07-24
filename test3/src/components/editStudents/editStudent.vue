@@ -4,7 +4,7 @@
             <input type="text" v-model="title" placeholder="addTodo...">
             <input type="submit" value="Submit">
         </form>
-    </div> -->
+  </div>-->
   <div class="container">
     <div class="row d-md-flex justify-content-center">
       <div class="col-md-6 col-12">
@@ -18,12 +18,7 @@
                     <label>Họ và tên:</label>
                   </div>
                   <div class="col-md-9 col-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      placeholder="Họ và tên..."
-                    />
+                    <input type="text" class="form-control" id="name" placeholder="Họ và tên..." />
                   </div>
                 </div>
               </div>
@@ -33,7 +28,14 @@
                     <label>Tuổi:</label>
                   </div>
                   <div class="col-md-9 col-12">
-                    <input type="number" min = 0 max = 100 class="form-control" id="age" placeholder="Nhập tuổi..." />
+                    <input
+                      type="number"
+                      min="0"
+                      max="100"
+                      class="form-control"
+                      id="age"
+                      placeholder="Nhập tuổi..."
+                    />
                   </div>
                 </div>
               </div>
@@ -43,7 +45,14 @@
                     <label>Điểm:</label>
                   </div>
                   <div class="col-md-9 col-12">
-                    <input type="number" min = 0 max = 10 class="form-control" id="score" placeholder="Nhập điểm..." />
+                    <input
+                      type="number"
+                      min="0"
+                      max="10"
+                      class="form-control"
+                      id="score"
+                      placeholder="Nhập điểm..."
+                    />
                   </div>
                 </div>
               </div>
