@@ -20,7 +20,6 @@ app.get("/",(req,res) => {
 require ("./app/routers/StudentRoute.js")(app);
 
 
-
 // Tạo port và listen cho request
 app.listen(3000,() => {
     console.log("server run port 3000");
