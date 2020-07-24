@@ -2,50 +2,49 @@ import Axios from "axios";
 
 
 const state = {
-    todos:[
-    ]
+    students: []
 
 };
 
-const getters ={
-    allTodos: (state) => state.todos
+const getters = {
+    allStudents: (state) => state.students
 };
 
 const actions = {
-    async fetchTodos({ commit }){
+    async fetchStudents({ commit }) {
         const response = await Axios.get('http://localhost:3000/students');
-        commit('setTodos',response.data);
+        commit('setStudents', response.data);
     },
-    async addTodo({commit},title){
-        const response = await Axios.post('https://jsonplaceholder.typicode.com/todos',{title, completed: false});
-        commit('newTodo',response.data);
+    async addStudent({ commit }, title) {
+        const response = await Axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false });
+        commit('newStudent', response.data);
         console.log(response.data);
     },
-    async deleteTodo({commit},id){
+    async deleteStudent({ commit }, id) {
         await Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
-        commit('remoTodo',id);
+        commit('remoStudent', id);
     },
 
-    async filterTodo({commit},e){
+    async filterStudent({ commit }, e) {
         const limit = parseInt(e.target.options[e.target.options.selectedIndex].innerText);
         const reponse = await Axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`);
-        commit('filterTodo',reponse.data);
+        commit('filterStudent', reponse.data);
     },
 
-    async changeCompletedTodo(xxx,id){
+    async changeCompletedStudent(xxx, id) {
         //console.log(id);
         const response = await Axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`);
         console.log(response);
         //conmit('changeCompleted',response.data);
     }
-    
+
 };
 
 const mutations = {
-    setTodos: (state, lala) => (state.todos = lala),
-    newTodo: (state,todo) => (state.todos.unshift(todo)),
-    remoTodo: (state,id) => (state.todos = state.todos.filter(todo => todo.id !== id)),
-    filterTodo: (state,data) => (state.todos = data),
+    setStudents: (state, lala) => (state.students = lala),
+    newStudent: (state, student) => (state.students.unshift(student)),
+    remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
+    filterStudent: (state, data) => (state.students = data),
     //changCompleted: (state,data) => (state.todos = state.todos.map((todo,index) => todo.id.completed = true))
 };
 
