@@ -26,7 +26,8 @@
               <td>{{ student.age }}</td>
               <td>{{ student.score }}</td>
               <td>
-                  <i class="fa fa-pencil-square-o text-primary mr-3" aria-hidden="true"></i>
+                <router-link to="/edit"><i class="fa fa-pencil-square-o text-primary mr-3" aria-hidden="true"></i></router-link>
+                  <router-view/>
                 <i @click="deleteStudent(student.id)" class="fas fa-trash-alt text-danger"></i>
 
               </td>
@@ -40,4 +41,4 @@
 </template>
 
 <script src="./public/js/Student.js"></script>
-<style src="./public/sass/styles.scss" lang="scss"></style>
+<style src="./public/sass/student.scss" lang="scss"></style>

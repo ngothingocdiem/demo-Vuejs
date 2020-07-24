@@ -1,0 +1,57 @@
+$color-white: rgba(255, 255, 255, 1);
+$color-green: rgba(197, 255, 229, 1);
+$text-size: 14px;
+
+.dark{
+    background-color: $color-green; 
+    .navigation{
+        .main-nav{
+            list-style-type: none; 
+            padding: 0px;
+            font-size: 0px;
+            margin: 0 auto;
+            .top-level-link{
+                display: inline-block;
+                padding: 0; 
+                a{
+                    text-decoration: none;
+                    display: block; 
+                    padding: 10px 10px; 
+                    position: relative;
+                    font-size: $text-size + 4px;
+                    color: $color-white - 210;
+                    :hover{
+                        color: #004425;
+                        text-decoration: none;
+                }
+                
+                }
+                .active{
+                    font-weight: bold;
+                }
+            }
+        }
+        img{
+            display: inline-block;
+            float: left;
+            width: 167px;
+        }
+    }
+}
+
+// Man hinh di dong
+@media only screen and (max-width: 768px){
+    .dark{
+        .navigation{
+            img{
+                width: 100%;
+                height: auto;
+            }
+           .main-nav{
+               li{
+                   display: block;
+               }
+           }
+        }
+    }
+}

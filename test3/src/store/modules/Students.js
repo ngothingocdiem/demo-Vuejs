@@ -20,6 +20,7 @@ const actions = {
         console.log(response.data);
         commit('setStudents', response.data);
     },
+<<<<<<< HEAD
     async addStudent({ commit },[fname,fage,fsex,faddress,fclasss,fscore]) {
         //const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
         const response = await Axios({
@@ -34,6 +35,10 @@ const actions = {
                 score : fscore
               }
         })
+=======
+    async addStudent({ commit }, title) {
+        const response = await Axios.post('http://localhost:3000/students', { title, completed: false });
+>>>>>>> 8251a9c475599b64072b94c9aaa086cdc4894e9a
         commit('newStudent', response.data);
         console.log(response.data);
     },
@@ -44,13 +49,13 @@ const actions = {
 
     async filterStudent({ commit }, e) {
         const limit = parseInt(e.target.options[e.target.options.selectedIndex].innerText);
-        const reponse = await Axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`);
+        const reponse = await Axios.get(`http://localhost:3000/students?_limit=${limit}`);
         commit('filterStudent', reponse.data);
     },
 
     async changeCompletedStudent(xxx, id) {
         //console.log(id);
-        const response = await Axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        const response = await Axios.put(`http://localhost:3000/students/${id}`);
         console.log(response);
         //conmit('changeCompleted',response.data);
     }

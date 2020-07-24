@@ -1,13 +1,7 @@
 <template>
   <!-- <div class="addTodo">
         <form action="#" @submit='submit'>
-            <input type="text" v-model="name" placeholder="name...">
-            <input type="text" v-model="age" placeholder="age...">
-            <input type="text" v-model="sex" placeholder="sex...">
-            <input type="text" v-model="address" placeholder="address...">
-            <input type="text" v-model="classs" placeholder="classs...">
-            <input type="text" v-model="score" placeholder="score...">
-            
+            <input type="text" v-model="title" placeholder="addTodo...">
             <input type="submit" value="Submit">
         </form>
     </div> -->
@@ -15,7 +9,7 @@
     <div class="row d-md-flex justify-content-center">
       <div class="col-md-6 col-12">
         <div class="card">
-          <div class="card-header text-white">Thêm sinh viên</div>
+          <div class="card-header text-white">Sửa sinh viên</div>
           <div class="card-body">
             <form>
               <div class="form-group">
@@ -62,6 +56,6 @@
   </div>
 </template>
 
-<script src="./public/js/addStudent.js"></script>
+<script src="./public/js/editStudent.js"></script>
 
-<style src="./public/sass/addstudent.scss" lang="scss" scoped></style>
+<style src="./public/sass/editstudent.scss" lang="scss" scoped></style>
