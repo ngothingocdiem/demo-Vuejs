@@ -1,0 +1,54 @@
+.Students {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.Student {
+    border: 1px solid #ccc;
+    background: #41b883;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+i {
+    font-size: 20px;
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+p {
+    margin: 20px 20px 20px 0;
+    display: inline-block;
+}
+
+.completed {
+    display: inline-block;
+}
+
+.uncompleted {
+    display: inline-block;
+}
+
+.box-completed {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #41b883;
+}
+
+.box-uncompleted {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: red;
+}
+
+.unCompleted {
+    background: red;
+}
