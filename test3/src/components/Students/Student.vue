@@ -40,4 +40,4 @@
 </template>
 
 <script src="./public/js/Student.js"></script>
-<style src="./public/sass/styles.scss" lang="scss"></style>
+<style src="./public/sass/student.scss" lang="scss"></style>
