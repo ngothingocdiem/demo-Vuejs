@@ -1,69 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="menu">
+      <div class="dark container-fluid">
+        <nav class="navigation" role="navigation">
+          <a href="javascript:void(0);" class="ic menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </a>
+          <a href=".">
+            <img src="./assets/hinhvue.png" alt />
+          </a>
+          <a href="javascript:void(0);" class="ic close"></a>
+          <!-- </div> -->
+          <ul class="main-nav">
+            <li class="top-level-link">
+              <a href="#" class="active">
+                <router-link to="/">HOME</router-link>
+              </a>
+            </li>
+            <li class="top-level-link">
+              <a href="#">
+                <router-link to="/about">ABOUT</router-link>
+              </a>
+            </li>
+            <li class="top-level-link">
+              <a href="#">
+                <router-link to="/">PRODUCT</router-link>
+              </a>
+            </li>
+            <li class="top-level-link">
+              <a href="#">
+                <router-link to="/">CONTACT</router-link>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <router-view/>
+    <router-view />
   </div>
-  <!-- <div id="app">
-    <div class="container">
-      <h1 class="title">TODO LIST</h1>
-      <Addproduct/>
-      <Filterproduct/>
-      <Product/>
-    </div>
-  </div> -->
 </template>
 
  <script>
-// import Product from './components/products/product';
-// import Addproduct from './components/addproducts/addproduct';
-// import Filterproduct from './components/filterproducts/fileterproduct';
+</script>
 
-// export default {
-//   name: 'App',
-//   components: {
-//     Product,
-//     Addproduct,
-//     Filterproduct
-//   }
-// }
- </script>
-
-<style lang="scss">
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-/* body{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  line-height: 1.6;
-  background: #e8f7f0;
-}
-.container{
-  max-width: 1100px;
-  margin: auto;
-  overflow: auto;
-  padding: 0 20px;
-} */
+<style src="./assets/style.scss" lang="scss" scoped>
 </style>
 

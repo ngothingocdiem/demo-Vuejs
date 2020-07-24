@@ -1,19 +1,21 @@
 <template>
   <div class="about">
-    <filterproduct/>
-    <product/>
+    <div class="container">
+      <filterproduct />
+      <product />
+    </div>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import product from '@/components/products/product'
-import filterproduct from '@/components/filterproducts/fileterproduct'
+import product from "@/components/products/product";
+import filterproduct from "@/components/filterproducts/fileterproduct";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     product,
-    filterproduct
-  }
-}
+    filterproduct,
+  },
+};
 </script>
