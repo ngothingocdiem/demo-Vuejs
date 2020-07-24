@@ -40,7 +40,7 @@ exports.create = (req, res) => {
         age : req.body.age,
         sex : req.body.sex,
         address : req.body.address,
-        class : req.body.class,
+        classs : req.body.classs,
         score : req.body.score
     });
   
@@ -70,6 +70,35 @@ exports.deleteById = (req,res) =>{
             };
         }else res.send({ message: `Student was deleted successfully!` });
     });
+};
+
+//update sinh vien theo id
+
+exports.update = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Student.updateById(
+    req.params.studentId,
+    new Student(req.body),
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found Customer with id ${req.params.studentId}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error updating Customer with id " + req.params.studentId
+          });
+        }
+      } else res.send(data);
+    }
+  );
 };
 
 

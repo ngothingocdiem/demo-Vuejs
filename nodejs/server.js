@@ -4,6 +4,8 @@ const express = require ("express");
 // Thêm module body-parser
 const bodyParser = require ("body-parser");
 
+var cors = require('cors');
+
 // Tạo một server
 const app = express();
 
@@ -11,6 +13,8 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended : true}));
+
+app.use(cors()) 
 
 // Tạo một route đơn giản
 app.get("/",(req,res) => {

@@ -5,5 +5,6 @@ module.exports = app => {
     app.get("/students/:studentId",students.findById);
     app.delete("/students/:studentId",students.deleteById);
     app.post("/students",students.create);
+    app.put("/students/:studentId",students.update);
 }
 

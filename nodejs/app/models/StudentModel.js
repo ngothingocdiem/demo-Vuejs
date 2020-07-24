@@ -7,7 +7,7 @@ const Student = function(student){
     this.age = student.age;
     this.sex = student.sex;
     this.address = student.address;
-    this.class = student.class;
+    this.classs = student.classs;
     this.score = student.score;
 }
 
@@ -78,27 +78,28 @@ Student.getAll = result => {
     });
 };
 
-// Student.updateById = (id, student, result) => {
-//     sql.query(
-//       "UPDATE customers SET name = ?, age = ?, sex = ?, address = ?, class = ?, score = ?, WHERE id = ?",
-//       [student.name, student.age, student.sex, student.address, student.class, student.score, id],
-//       (err, res) => {
-//         if (err) {
-//           console.log("error: ", err);
-//           result(null, err);
-//           return;
-//         }
-  
-//         if (res.affectedRows == 0) {
-//           // not found Customer with the id
-//           result({ kind: "not_found" }, null);
-//           return;
-//         }
-  
-//         console.log("updated customer: ", { id: id, ...customer });
-//         result(null, { id: id, ...customer });
-//       }
-//     );
-//   };
+// update student
+Student.updateById = (id, student, result) => {
+  sql.query(
+    "UPDATE students SET name = ?, age = ?, sex = ?, address = ?, classs = ?, score = ? WHERE id = ?",
+    [student.name, student.age, student.sex, student.address,student.classs,student.score,id],
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      if (res.affectedRows == 0) {
+        // not found Customer with the id
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      console.log("updated student: ", { id: id, ...student });
+      result(null, { id: id, ...student });
+    }
+  );
+};
 
 module.exports = Student;

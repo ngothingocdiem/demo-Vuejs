@@ -12,11 +12,28 @@ const getters = {
 
 const actions = {
     async fetchStudents({ commit }) {
-        const response = await Axios.get('http://localhost:3000/students');
+        const response = await Axios({
+            method:'GET',
+            url : "http://localhost:3000/students",
+            headers :{'Access-Control-Allow-Origin': 'http://localhost:3000' }
+        });
+        console.log(response.data);
         commit('setStudents', response.data);
     },
-    async addStudent({ commit }, {name,age,sex,address,classs,score}) {
-        const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
+    async addStudent({ commit },[fname,fage,fsex,faddress,fclasss,fscore]) {
+        //const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
+        const response = await Axios({
+            method: 'post',
+            url: 'http://localhost:3000/students',
+            data: {
+                name : fname,
+                age : fage,
+                sex : fsex,
+                address : faddress,
+                classs : fclasss,
+                score : fscore
+              }
+        })
         commit('newStudent', response.data);
         console.log(response.data);
     },
