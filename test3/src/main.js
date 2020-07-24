@@ -3,16 +3,13 @@ import App from './App.vue';
 import router from './router';
 import store from './store/store';
 
-/**
- * diem create bootstrap & bootstrap-vue 24-7-2020
- */
-import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'; // diem create 24/7/2020
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 
 // Import the styles directly. (Or you could add them via script tags.)
-import 'bootstrap/dist/css/bootstrap.css'; // diem 24/7/2020
-import 'bootstrap-vue/dist/bootstrap-vue.css'; // diem 24/7/2020
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-Vue.use(BootstrapVue); // diem 24/7/2020
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 
