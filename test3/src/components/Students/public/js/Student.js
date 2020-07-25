@@ -11,10 +11,17 @@ export default {
         handsearch(e) {
             e.preventDefault();
             this.seachStudents(this.search);
+        },
+        editHanld(value){
+            this.$store.commit('setid',value);
         }
     },
     computed: mapGetters(['allStudents']),
     created() {
         this.fetchStudents();
-    }
+    },
+    updated() {
+        this.fetchStudents();
+    },
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th7 24, 2020 lúc 03:47 AM
+-- Thời gian đã tạo: Th7 25, 2020 lúc 06:17 AM
 -- Phiên bản máy phục vụ: 5.7.23
 -- Phiên bản PHP: 7.2.10
 
@@ -33,24 +33,25 @@ CREATE TABLE IF NOT EXISTS `students` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
   `age` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `sex` tinyint(4) NOT NULL,
+  `sex` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
-  `class` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
+  `classs` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
   `score` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `students`
 --
 
-INSERT INTO `students` (`id`, `name`, `age`, `sex`, `address`, `class`, `score`) VALUES
-(1, 'Nguyễn Văn A', '20', 1, 'Hồ Chí Minh', 'TT3', 6),
-(2, 'Nguyễn Văn B', '20', 1, 'Hồ Chí Minh', 'TT3', 7),
-(3, 'Nguyễn Văn C', '20', 0, 'Hồ Chí Minh', 'TT3', 8),
-(4, 'Nguyễn Văn D', '20', 0, 'Hồ Chí Minh', 'TT3', 9),
-(5, 'Nguyễn Văn E', '20', 1, 'Hồ Chí Minh', 'TT3', 10),
-(6, 'Nguyễn Văn F', '20', 1, 'Hồ Chí Minh', 'TT3', 5);
+INSERT INTO `students` (`id`, `name`, `age`, `sex`, `address`, `classs`, `score`) VALUES
+(77, 'Lê Nguyễn Đức Huy', '21', 'Nam', 'HCM', 'SPKT', 3),
+(76, 'đức huy', '21', 'nữ', 'hồ chí minh', 'tt4', 10),
+(73, 'Trần Văn Thành 123', '21', 'nam', 'Bình Định', 'TT3', 7),
+(65, 'Trần Văn Thành', '21', 'nam', 'Bình Định', 'TT3', 7),
+(94, 'Thanh Tiến 111222', '21', 'Nam', 'HCM', 'TT%', 3),
+(93, 'Thanh Tiến 1', '21', 'Nam', 'HCM', 'TT%', 3),
+(89, 'Nguyễn Hữu Thê', '20', 'Nam', 'Hồ Chí Minh', 'TT2', 7);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

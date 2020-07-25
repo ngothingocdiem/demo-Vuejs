@@ -48,7 +48,7 @@ const actions = {
                 score : student.score
               }
         })
-        commit('editStudent', response.data, student.id);
+        commit('editStudent', response.data);
     },
 
     async seachStudents({ commit }, search){
@@ -79,7 +79,7 @@ const actions = {
 const mutations = {
     setStudents: (state, data) => (state.students = data),
     newStudent: (state, data) => (state.students.unshift(data)),
-    editStudent: (state,data) => (state.students.unshift(data)),
+    editStudent: (state,student) => (state.students.fill([student.name,student.age,student.sex,student.address,student.classs,student.score],student.id,student.id+1)),
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
     filterStudent: (state, data) => (state.students = data),
     searchStudents: (state,data) => (state.students = data)

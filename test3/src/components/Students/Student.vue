@@ -37,7 +37,7 @@
               <td>{{ student.classs }}</td>
               <td>{{ student.score }}</td>
               <td>
-                <router-link to="/edit"><i class="fa fa-pencil-square-o text-primary mr-3" aria-hidden="true"></i></router-link>
+               <div class="edit" @click="editHanld(student.id)"><router-link to="/edit"><i class="fa fa-pencil-square-o text-primary mr-3" aria-hidden="true"></i></router-link></div> 
                   
                 <i @click="deleteStudent(student.id)" class="fas fa-trash-alt text-danger"></i>
 

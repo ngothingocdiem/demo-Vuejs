@@ -1,6 +1,6 @@
 import { mapActions } from 'vuex';
 export default {
-    name: 'addStudent',
+    name: 'editStudent',
     data() {
         return {  
             name: '',
@@ -12,10 +12,10 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['addStudent']),
+        ...mapActions(['editStudent']),
         submit(e) {
             e.preventDefault();
-            //this.addStudent({name:this.name,age:this.age,sex:this.sex,address:this.address,classs:this.classs,score:this.score});
+            this.editStudent({id:this.$store.state.edit.id,name:this.name,age:this.age,sex:this.sex,address:this.address,classs:this.classs,score:this.score});
             console.log(e);
         }
     },

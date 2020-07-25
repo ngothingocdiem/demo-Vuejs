@@ -5,8 +5,16 @@ import students from './modules/Students'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state: {},
-    mutations: {},
+    state: {
+        edit:{
+            id : ""
+        }
+    },
+    mutations: {
+        setid(state,value){
+            state.edit.id = value;
+        }
+    },
     actions: {},
     modules: {
         students
