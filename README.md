@@ -3,11 +3,13 @@ Bước 1: Vào trang Github.com
 Bước 2: Clone về máy: 
 + Mở cmd (hoặc) Git Bash, Terminal vào thư mục clone git về và gõ lệnh sau:
 $ git clone <https://github.com/ngothingocdiem/demo-Vuejs.git>
-Bước 3: Tại thư mục clone về, tiếp tục gõ cmd (hoặc) Git Bash:
+Bước 3: Tại thư mục chứa Git, tiếp tục gõ cmd (hoặc) Git Bash:
 gõ vào: code . 
 --> Sẽ mở ra cửa sổ Visual Code
 Bước 4: Mở Terminal ra: 
-+ Nếu chưa tới thư mục Project thì gõ lệnh: cd <test3>
++ Nếu chưa tới thư mục Project thì gõ lệnh: 
++ cd demo-Vuejs
++ cd test3
 Bước 5: Cài đặt node_modules, gõ lệnh: npm i
 Bước 6: Import cơ sỡ dữ liệu:
 + b1: localhost/phpmyadmin/
