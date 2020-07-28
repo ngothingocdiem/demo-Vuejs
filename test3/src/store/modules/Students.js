@@ -70,8 +70,9 @@ const actions = {
 
     async filterStudent({ commit }, e) {
         const limit = parseInt(e.target.options[e.target.options.selectedIndex].innerText);
-        const reponse = await Axios.get(`http://localhost:3000/students/limit/${limit}`);
-        commit('filterStudent', reponse.data);
+        const response = await Axios.get(`http://localhost:3000/students/limit/${limit}`);
+        commit('filterStudent', response.data);
+        //console.log(response.data);
     },
 
 };
@@ -81,7 +82,7 @@ const mutations = {
     newStudent: (state, data) => (state.students.unshift(data)),
     editStudent: (state,student) => (state.students.fill([student.name,student.age,student.sex,student.address,student.classs,student.score],student.id,student.id+1)),
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
-    filterStudent: (state, data) => (state.students = data),
+    filterStudent: (state, data) => ( state.students = data,console.log(state.students)),
     searchStudents: (state,data) => (state.students = data)
 };
 

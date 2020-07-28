@@ -59,7 +59,7 @@ Student.remove = (id, result) => {
             return;
         }
 
-        console.log("deleted customer with id: ", id);
+        console.log("deleted student with id: ", id);
         result(null, res);
     });
 };

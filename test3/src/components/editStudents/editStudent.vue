@@ -7,7 +7,7 @@
   </div>-->
   <div class="container">
     <div class="row d-md-flex justify-content-center">
-      <div class="col-md-6 col-12">
+      <div class="col-md-12 col-12">
         <div class="card">
           <div class="card-header text-white">Sửa sinh viên</div>
           <div class="card-body">

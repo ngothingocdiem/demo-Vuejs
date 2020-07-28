@@ -20,8 +20,8 @@ export default {
     created() {
         this.fetchStudents();
     },
-    updated() {
-        this.fetchStudents();
-    },
+    // updated() {
+    //     this.fetchStudents();
+    // },
 
 }
