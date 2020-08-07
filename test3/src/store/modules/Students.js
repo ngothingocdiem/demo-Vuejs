@@ -18,7 +18,7 @@ const actions = {
         });
         commit('setStudents', response.data);
     },
-    async addStudent({ commit },student) {
+    async addStudent({ commit }, student) {
         //const response = await Axios.post('http://localhost:3000/students', { name,age,sex,address,classs,score });
         const response = await Axios({
             method: 'post',
@@ -35,23 +35,23 @@ const actions = {
         commit('newStudent', response.data);
     },
 
-    async editStudent({ commit },student) {
+    async editStudent({ commit }, student) {
         const response = await Axios({
             method: 'put',
             url: `http://localhost:3000/students/${student.id}`,
             data: {
-                name : student.name,
-                age : student.age,
-                sex : student.sex,
-                address : student.address,
-                classs : student.classs,
-                score : student.score
-              }
+                name: student.name,
+                age: student.age,
+                sex: student.sex,
+                address: student.address,
+                classs: student.classs,
+                score: student.score
+            }
         })
         commit('editStudent', response.data);
     },
 
-    async seachStudents({ commit }, search){
+    async seachStudents({ commit }, search) {
         const response = await Axios({
             method: 'post',
             url: 'http://localhost:3000/students/search',
@@ -60,7 +60,6 @@ const actions = {
             }
         });
         commit('searchStudents', response.data);
-        console.log(response.data);
     },
 
     async deleteStudent({ commit }, id) {
@@ -80,10 +79,23 @@ const actions = {
 const mutations = {
     setStudents: (state, data) => (state.students = data),
     newStudent: (state, data) => (state.students.unshift(data)),
-    editStudent: (state,student) => (state.students.fill([student.name,student.age,student.sex,student.address,student.classs,student.score],student.id,student.id+1)),
+    editStudent: function(state, data) {
+        state.students.forEach(student => {
+            if (student.id == data.id) {
+                student.name = data.name;
+                student.age = data.age;
+                student.sex = data.sex;
+                student.address = data.address;
+                student.classs = data.classs;
+                student.score = data.score;
+            }
+        });
+        return state.students;
+    },
+    //editStudent: (state, data) => ()
     remoStudent: (state, id) => (state.students = state.students.filter(student => student.id !== id)),
-    filterStudent: (state, data) => ( state.students = data,console.log(state.students)),
-    searchStudents: (state,data) => (state.students = data)
+    filterStudent: (state, data) => (state.students = data),
+    searchStudents: (state, data) => (state.students = data)
 };
 
 export default {

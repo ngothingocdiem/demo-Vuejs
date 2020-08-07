@@ -6,13 +6,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        edit:{
-            id : ""
+        Student: {
+            id: "",
+            name: "",
+            age: "",
+            sex: "",
+            address: "",
+            classs: "",
+            score: ""
         }
     },
     mutations: {
-        setid(state,value){
-            state.edit.id = value;
+        setStudent(state, value) {
+            state.Student.id = value.id;
+            state.Student.name = value.name;
+            state.Student.age = value.age;
+            state.Student.sex = value.sex;
+            state.Student.address = value.address;
+            state.Student.classs = value.classs;
+            state.Student.score = value.score;
         }
     },
     actions: {},
