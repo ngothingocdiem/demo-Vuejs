@@ -106,7 +106,8 @@
                   </div>
                 </div>
               </div>
-              <button @click="submit($event)" type="submit" class="btn btn-primary"> <router-link to="/" class="btn btn-primary"> Submit</router-link></button>
+              <a @click="submit($event)" class="btn btn-primary" href="/"></a>
+              <!-- <button @click="submit($event)" type="submit" class="btn btn-primary"> <router-link to="/" class="btn btn-primary"> Submit</router-link></button> -->
             </form>
           </div>
         </div>
